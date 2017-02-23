@@ -1,0 +1,18 @@
+
+#jumbotron {
+	background-color: #4169E1;
+}
+
+
+
+#jumbotron>h1{
+	color: white;
+	font-family: 'Fira Sans', sans-serif;
+	margin-left: 40px;
+	font-size: 54px;
+}
+
+#tablica {
+	margin-top: 2em;
+	padding-top: 2em;
+}
