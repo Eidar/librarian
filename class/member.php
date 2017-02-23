@@ -6,7 +6,7 @@ class Member implements IModel
 {
 	final $tablename = "members";
 
-	//Member public data
+	//Memeber public data
 	public $name;
 	public $lname;
 	public $email;
@@ -88,15 +88,20 @@ class Member implements IModel
 
 	}
 
-	final public static function setData(array()){
+	final public static function setData(Array $data){
 
+		$data = $data['name'];
+		$lname = $data['lname'];
+		$email = $data['email'];
+		$phone = $data['phone'];
+		$sex = $data['sex'];
 		$regdate = date("d.m.Y");
 		$active = (int) 1;
 		$mem_id = "m_" . mt_rand(1,100) . "lib_" . mt_rand(1,100);
 
-		$sql = 'INSERT INTO ' . $this->tablename . '';
+		$sql = 'INSERT INTO ' . $this->tablename . ' ';
 		$sql .= '(name, lname, email, phone, sex, regdate, active, mem_id) ';
-		$sql .= 'VALUES ("' . $data['name'] . '", "' . $data['lname'] . '", "' . $data['email'] . '", "' . $data['phone'] . '", "' . $data['sex'] . '", "' . $regdate . '", "' . $active . '", "' . $mem_id . '")';
+		$sql .= 'VALUES ("' . $name . '", "' . $lname . '", "' . $email . '", "' . $phone . '", "' . $sex . '", "' . $regdate . '", "' . active . '", "' . $mem_id . '");';
 
 		$db = Connection::getInstance();
 		$mysqli = $db->getConnection();
